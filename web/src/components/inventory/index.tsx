@@ -1,11 +1,13 @@
 import React from 'react';
 import useNuiEvent from '../../hooks/useNuiEvent';
+import InventoryCharacter from './InventoryCharacter';
 import InventoryGrid from './InventoryGrid';
 import InventoryControl from './InventoryControl';
 import InventoryHotbar from './InventoryHotbar';
 import Fade from '../utils/Fade';
 import { useAppDispatch, useAppSelector } from '../../store';
 import {
+  selectCharacterInventory,
   selectLeftInventory,
   selectRightInventory,
   setupInventory,
@@ -25,12 +27,14 @@ const Inventory: React.FC = () => {
   });
   useExitListener(setInventoryVisible);
 
+  const characterInventory = useAppSelector(selectCharacterInventory);
   const leftInventory = useAppSelector(selectLeftInventory);
   const rightInventory = useAppSelector(selectRightInventory);
 
   const dispatch = useAppDispatch();
 
   useNuiEvent<{
+    characterInventory: InventoryProps;
     leftInventory?: InventoryProps;
     rightInventory?: InventoryProps;
   }>('setupInventory', (data) => {
@@ -43,6 +47,7 @@ const Inventory: React.FC = () => {
   return (
     <>
       <Fade visible={inventoryVisible} className="center-wrapper">
+        <InventoryCharacter inventory={characterInventory} />
         <InventoryGrid inventory={leftInventory} />
         <InventoryControl />
         <InventoryGrid inventory={rightInventory} />

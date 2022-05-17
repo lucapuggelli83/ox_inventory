@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Character</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <style>
+    .center-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .square {
+      float: left;
+      position: relative;
+      width: 33%;
+      left: auto;
+      right: auto;
+      overflow: hidden;
+      border: 1px solid black;
+    }
+
+    .lato {
+      width: 20%;
+      height: calc(5 * 10.42vh + 5 * 2px);
+      float: left;
+      position: relative;
+    }
+
+    .centro {
+      width: 60%;
+      height: calc(5 * 10.42vh + 5 * 2px);
+      float: left;
+      position: relative;
+    }
+
+    .inventario {
+      width: 100%;
+      height: 19.5%;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 0.25vh;
+      border: 1px solid #000;
+      margin-bottom: 2px;
+    }
+
+    .column-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .character-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 30vh;
+    }
+
+    .row-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .inventory-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5vh;
+    }
+
+    .inventory-grid {
+      display: grid;
+      height: calc(6 * 8.68vh + 6 * 2px);
+      grid-template-columns: repeat(1, 8.48vh);
+      grid-auto-rows: 8.68vh;
+      gap: 5px;
+      overflow-y: none;
+      margin-top: 0.5vh;
+      margin-bottom: 1vh;
+    }
+
+    .item-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: rgba(0, 0, 0, 0.4);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 10.2vh - 2.5vh;
+      border-radius: 0.25vh;
+      image-rendering: -webkit-optimize-contrast;
+      position: relative;
+      border: 1px inset rgba(0, 0, 0, 0.3);
+    }
+
+    .inventory-character-grid {
+      display: grid;
+      height: calc(6 * 8.68vh + 6 * 2px);
+      grid-template-columns: repeat(1, 30vh);
+      grid-auto-rows: alc(6 * 8.68vh + 6 * 2px);
+      gap: 5px;
+      overflow-y: none;
+      margin-top: 0.5vh;
+      margin-bottom: 1vh;
+    }
+
+    .item-character-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: rgba(0, 0, 0, 0.4);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 10.2vh - 2.5vh;
+      border-radius: 0.25vh;
+      image-rendering: -webkit-optimize-contrast;
+      position: relative;
+      height: calc(6 * 8.68vh + 6 * 4px);
+      width: 30vh;
+      border: 1px inset rgba(0, 0, 0, 0.3);
+    }
+
+    .item-container .item-count,
+    .item-character-container-single .item-count {
+      display: flex;
+
+
+    }
+
+    .item-container .item-count span,
+    .item-character-container-single .item-count span {
+      margin-left: auto;
+      font-size: 0.7em;
+      font-weight: 300;
+      padding: 0.2em;
+    }
+
+    .item-label {
+      background-color: rgb(44, 62, 80);
+      color: white;
+      padding: 0.1em;
+      margin: -1px;
+      font-size: 0.7em;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+      border: inherit;
+      border-top: 1px inset rgba(0, 0, 0, 0.4);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="center-wrapper">
+    <div class="character-wrapper" style="margin-right: 5px;">
+      <div class="row-wrapper">
+        <div class="inventory-character-grid">
+          <div class="item-character-container" style="background-image: url('./men.webp');">
+          </div>
+        </div>
+      </div>
+      <div class="row-wrapper"></div>
+    </div>
+    <div class="column-wrapper">
+      <div class="row-wrapper">
+        <div class="inventory-grid">
+          <div class="item-container" style="opacity: 1;  background-image: url('./water.png'); ">
+            <div class="item-count"></div>
+
+            <div class="item-label">VODA</div>
+          </div>
+          <div class="item-container" style="opacity: 1;  background-image: url('./water.png'); ">
+            <div class="item-count"></div>
+
+            <div class="item-label">VODA</div>
+          </div>
+          <div class="item-container" style="opacity: 1;  background-image: url('./water.png'); ">
+            <div class="item-count"></div>
+
+            <div class="item-label">VODA</div>
+          </div>
+          <div class="item-container" style="opacity: 1;  background-image: url('./water.png'); ">
+            <div class="item-count"></div>
+
+            <div class="item-label">VODA</div>
+          </div>
+          <div class="item-container" style="opacity: 1;  background-image: url('./water.png'); ">
+            <div class="item-count"></div>
+
+            <div class="item-label">VODA</div>
+          </div>
+          <div class="item-container" style="opacity: 1;  background-image: url('./water.png'); ">
+            <div class="item-count"></div>
+
+            <div class="item-label">VODA</div>
+          </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- <div class="center-wrapper">
+    <div class="square">
+      <div class="lato">
+          <div class="inventario">xxx</div>
+          <div class="inventario">xxx</div>
+          <div class="inventario">xxx</div>
+          <div class="inventario">xxx</div>
+          <div class="inventario">xxx</div>
+      </div>
+      <div class="centro"></div>
+      <div class="lato"></div>
+    </div>
+  </div> -->
+
+
+
+  <!-- <div class="center-wrapper">
+    <div class="column-wrapper" style="height: 30vh;">
+      <div class="row-wrapper inventory-grid"></div>
+      <div class="row-wrapper inventory-grid"></div>
+      <div class="row-wrapper inventory-grid"></div>
+      <div class="row-wrapper inventory-grid"></div>
+      <div class="row-wrapper inventory-grid"></div>
+    </div>
+    <div class="column-wrapper" style="height: 30vh; background-color: rgba(0, 0, 0, 0.4); border-radius: 0.25vh; margin-left:1vw;margin-right:1vw;">
+      <div class="row-wrapper">
+        <div style="width:10vw;"></div>
+      </div>
+    </div>
+    <div class="column-wrapper" style="height: 30vh;">
+      <div class="row-wrapper inventory-grid"></div>
+      <div class="row-wrapper inventory-grid"></div>
+      <div class="row-wrapper inventory-grid"></div>
+      <div class="row-wrapper inventory-grid"></div>
+      <div class="row-wrapper inventory-grid"></div>
+    </div>
+  </div> -->
+
+</body>
+
+</html>
+
+
+
+
+<div className="inventory-character-item-grid">
+  <div className="item-container">
+    {/* style="opacity: 1;  background-image: url('./water.png'); "> */}
+    <div className="item-count"></div>
+
+    <div className="item-character-label">VODA</div>
+  </div>
+  <div className="item-container">
+    {/* style="opacity: 1;  background-image: url('./water.png'); "> */}
+    <div className="item-count"></div>
+
+    <div className="item-character-label">VODA</div>
+  </div>
+  <div className="item-container">
+    {/* style="opacity: 1;  background-image: url('./water.png'); "> */}
+    <div className="item-count"></div>
+
+    <div className="item-character-label">VODA</div>
+  </div>
+  <div className="item-container">
+    {/* style="opacity: 1;  background-image: url('./water.png'); "> */}
+    <div className="item-count"></div>
+
+    <div className="item-character-label">VODA</div>
+  </div>
+  <div className="item-container">
+    {/* style="opacity: 1;  background-image: url('./water.png'); "> */}
+    <div className="item-count"></div>
+
+    <div className="item-character-label">VODA</div>
+  </div>
+  <div className="item-container">
+    {/* style="opacity: 1;  background-image: url('./water.png'); "> */}
+    <div className="item-count"></div>
+
+    <div className="item-character-label">VODA</div>
+  </div>
+</div>
+</div>
+</div>

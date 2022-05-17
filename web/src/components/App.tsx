@@ -20,6 +20,27 @@ debugData([
   {
     action: 'setupInventory',
     data: {
+      characterInventory: {
+        id: 'character',
+        type: 'character',
+        slots: 6,
+        items: [
+          { slot: 1, name: 'water', weight: '',
+          metadata: {
+            durability: 100,
+            description: `# Testing something  \n**Yes**`,
+            serial: 'SUPERCOOLWATER9725',
+            mustard: '60%',
+            ketchup: '30%',
+            mayo: '10%',
+          } },
+          { slot: 2, name: 'beer', weight: '' },
+          { slot: 3, name: 'candy', weight: '' },
+          { slot: 4, name: 'water', weight: '' },
+          { slot: 5, name: 'water', weight: '' },
+          { slot: 6, name: 'water', weight: '' },
+        ],
+      },
       leftInventory: {
         id: 'test',
         type: 'player',
@@ -66,8 +87,9 @@ const App: React.FC = () => {
     // sentry: boolean;
     locale: { [key: string]: string };
     items: typeof Items;
+    characterInventory: Inventory;
     leftInventory: Inventory;
-  }>('init', ({ locale, items, leftInventory }) => {
+  }>('init', ({ locale, items, characterInventory, leftInventory }) => {
     // if (!process.env.IN_GAME_DEV && !isEnvBrowser())
     //   // Sentry no longer being utilised; settings left behind for developers looking to track errors on their servers (more info later)
     //   Sentry.init({
@@ -81,6 +103,7 @@ const App: React.FC = () => {
     for (const [name, data] of Object.entries(items)) Items[name] = data;
 
     dispatch(setupInventory({ leftInventory }));
+    dispatch(setupInventory({ characterInventory }));
   });
 
   //TODO: refactor

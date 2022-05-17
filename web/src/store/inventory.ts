@@ -31,6 +31,13 @@ const initialState: State = {
     maxWeight: 0,
     items: [],
   },
+  characterInventory: {
+    id: '',
+    type: '',
+    slots: 0,
+    maxWeight: 0,
+    items: [],
+  },
   itemAmount: 0,
   shiftPressed: false,
   isBusy: false,
@@ -68,6 +75,7 @@ export const inventorySlice = createSlice({
       state.history = {
         leftInventory: current(state.leftInventory),
         rightInventory: current(state.rightInventory),
+        characterInventory: current(state.characterInventory),
       };
     });
     builder.addMatcher(isFulfilled, (state) => {
@@ -95,6 +103,7 @@ export const {
 } = inventorySlice.actions;
 export const selectLeftInventory = (state: RootState) => state.inventory.leftInventory;
 export const selectRightInventory = (state: RootState) => state.inventory.rightInventory;
+export const selectCharacterInventory = (state: RootState) => state.inventory.characterInventory;
 export const selectItemAmount = (state: RootState) => state.inventory.itemAmount;
 export const selectIsBusy = (state: RootState) => state.inventory.isBusy;
 

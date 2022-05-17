@@ -521,3 +521,86 @@ input[type='number'] {
   transform: scale(0);
   transition: opacity 500ms, transform 500ms ease;
 }
+
+.character-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 30vh;
+  margin-right: 0.3em;
+}
+
+.column-character-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2em;
+}
+
+.inventory-character-grid {
+  display: grid;
+  height: calc(6 * 8.68vh + 6 * 2px);
+  grid-template-columns: repeat(1, 30vh);
+  grid-auto-rows: calc(6 * 8.68vh + 6 * 2px);
+  gap: 5px;
+  overflow-y: none;
+  margin-top: 0.5vh;
+  margin-bottom: 1vh;
+}
+
+.inventory-character-item-grid {
+  display: grid;
+  height: calc(6 * 8.68vh + 6 * 2px);
+  grid-template-columns: repeat(1, 8.48vh);
+  grid-auto-rows: 8.68vh;
+  gap: 5px;
+  overflow-y: none;
+  margin-top: 0.5vh;
+  margin-bottom: 1vh;
+}
+
+.item-character-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10.2vh - 2.5vh;
+  border-radius: 0.25vh;
+  image-rendering: -webkit-optimize-contrast;
+  position: relative;
+  height: calc(6 * 8.68vh + 6 * 4px);
+  width: 30vh;
+  border: 1px inset rgba(0, 0, 0, 0.3);
+  background-image: url('./men.webp');
+  background-size: 20vh calc(6 * 8.68vh);
+}
+
+.item-container .item-count,
+.item-character-container-single .item-count {
+  display: flex;
+}
+
+.item-container .item-count span,
+.item-character-container-single .item-count span {
+  margin-left: auto;
+  font-size: 0.7em;
+  font-weight: 300;
+  padding: 0.2em;
+}
+
+.item-character-label {
+  background-color: rgb(44, 62, 80);
+  color: white;
+  padding: 0.1em;
+  margin: -1px;
+  font-size: 0.7em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  border: inherit;
+  border-top: 1px inset rgba(0, 0, 0, 0.4);
+}
